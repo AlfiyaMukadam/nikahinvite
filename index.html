@@ -1,0 +1,1553 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F8F4EF">
+<meta name="description" content="A celebration of faith, family and love. Danish & Alfiya — Mehfil-e-Noor, December 2026.">
+<title>Danish & Alfiya | Mehfil-e-Noor</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Parisienne&display=swap');
+
+:root{
+  --warm-white:#F8F4EF;--champagne:#B99B82;--mocha:#9A7778;
+  --blue:#A0A995;--blue-deep:#55404B;--charcoal:#342D31;
+  --muted:#776B6D;--paper:#FFFCF8;--line:#E5D8D1;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --editorial:"Cormorant Garamond",Georgia,serif;
+  --script:"Parisienne",cursive;--sans:"DM Sans",Arial,sans-serif;
+  --arabic:"Amiri",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;background:var(--warm-white);color:var(--charcoal);font-family:var(--sans);font-weight:400;overflow-x:hidden}
+body.locked{overflow:hidden}
+body,button,input,textarea,select{font-family:var(--sans)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+::selection{background:var(--blue);color:#fff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes nameReveal{from{opacity:0;transform:translateY(18px);filter:blur(4px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes float{0%{transform:translateY(0);opacity:0}15%{opacity:.5}85%{opacity:.35}100%{transform:translateY(-105vh);opacity:0}}
+@keyframes curtainLeft{to{transform:translateX(-102%)}}
+@keyframes curtainRight{to{transform:translateX(102%)}}
+@keyframes shimmer{0%,100%{opacity:.5}50%{opacity:1}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* Opening invitation */
+.opening{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;overflow:hidden;padding:24px;background:radial-gradient(ellipse at 50% 40%,#fffdfa 0%,var(--warm-white) 68%,#EDE3DE 100%);color:var(--charcoal);isolation:isolate;transition:opacity .9s ease,visibility .9s ease}
+.opening:before{content:"";position:absolute;inset:15px;border:1px solid var(--champagne);pointer-events:none}
+.opening:after{content:"";position:absolute;inset:23px;border:1px solid #B99B8280;pointer-events:none}
+.opening.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.opening-curtain{position:absolute;top:0;bottom:0;left:0;width:50%;z-index:5;background:linear-gradient(140deg,#F0E7E2,#F8F4EF);border-right:1px solid var(--champagne);pointer-events:none}
+.opening-curtain.right{left:auto;right:0;border-right:0;border-left:1px solid var(--champagne)}
+.opening.opened .opening-curtain.left{animation:curtainLeft 1.4s cubic-bezier(.77,0,.18,1) forwards}
+.opening.opened .opening-curtain.right{animation:curtainRight 1.4s cubic-bezier(.77,0,.18,1) forwards}
+.opening-arch{position:absolute;width:min(440px,82vw);height:min(580px,78vh);border:1px solid #B99B82;border-radius:220px 220px 0 0;pointer-events:none}
+.opening-arch:before{content:"";position:absolute;inset:12px;border:1px solid #B99B8280;border-radius:210px 210px 0 0}
+.opening-arch:after{content:"";position:absolute;inset:26px;border:1px solid #B99B8255;border-radius:200px 200px 0 0}
+.opening-arch.small{width:min(390px,74vw);height:min(520px,70vh);opacity:.45}
+.opening-ornament{position:absolute;color:var(--mocha);font-size:23px;opacity:.65}
+.opening-ornament.one{top:12%;left:12%}.opening-ornament.two{top:12%;right:12%}.opening-ornament.three{bottom:12%;left:12%}.opening-ornament.four{bottom:12%;right:12%}
+.particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.particle{position:absolute;bottom:-20px;left:var(--left);width:var(--size);height:var(--size);border:1px solid #B8A99B99;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,transparent 70%);animation:float var(--duration) linear var(--delay) infinite}
+.opening-card{position:relative;z-index:6;width:min(660px,100%);max-height:calc(100svh - 65px);overflow:auto;padding:clamp(30px,6vh,65px) 25px;text-align:center;border:1px solid var(--champagne);background:#FFFCF8D9;backdrop-filter:blur(8px);box-shadow:0 25px 90px #65564D16;animation:fadeUp 1.2s ease both;transition:opacity .5s ease,transform .7s ease}
+.opening.opened .opening-card{opacity:0;transform:scale(1.04);filter:blur(5px)}
+.opening-kicker{color:var(--mocha);font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase}
+.bismillah{margin:20px 0 15px;color:var(--blue);font:37px var(--arabic);direction:rtl}
+.opening-overline{color:var(--muted);font:italic 18px var(--editorial)}
+.opening h1{display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:0 13px;margin:20px 0 0;color:var(--charcoal);font:400 clamp(57px,9vw,91px)/1.1 var(--script);animation:nameReveal 1.3s .3s both}
+.opening h1 .amp{color:var(--mocha);font:400 .65em var(--editorial)}
+.opening-script{margin-top:15px;color:var(--mocha);font:italic 19px var(--editorial)}
+.opening-divider{display:flex;align-items:center;gap:13px;width:150px;margin:24px auto 15px;color:var(--mocha)}
+.opening-divider:before,.opening-divider:after{content:"";flex:1;height:1px;background:var(--champagne)}
+.opening-date{color:var(--charcoal);font:500 25px var(--editorial);letter-spacing:.12em}
+.opening-date small{display:block;margin-top:7px;color:var(--mocha);font:8px var(--sans);letter-spacing:.25em}
+.opening-card p{max-width:400px;margin:20px auto;color:var(--muted);font-size:11px;line-height:2}
+.open-button{min-width:180px;min-height:49px;padding:0 28px;border:1px solid var(--blue);background:var(--blue);color:#fff;font-size:9px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;transition:.3s}
+.open-button:hover{background:var(--blue-deep);border-color:var(--blue-deep);transform:translateY(-3px)}
+.opening-note{margin-top:19px;color:var(--mocha);font-size:8px;letter-spacing:.2em}
+
+/* Navigation */
+header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px clamp(16px,5vw,75px);background:#F8F4EFED;border-bottom:1px solid var(--line);backdrop-filter:blur(15px)}
+.brand{display:flex;align-items:center;gap:10px;color:var(--charcoal);font:500 25px var(--editorial);white-space:nowrap}
+.brand img{width:34px;height:34px;object-fit:contain}
+.nav-area{display:flex;align-items:center;gap:22px}
+nav{display:flex;align-items:center;gap:clamp(12px,2vw,25px)}
+nav a{position:relative;color:var(--charcoal);font-size:9px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;transition:color .25s}
+nav a:after{content:"";position:absolute;bottom:-7px;left:0;width:0;height:1px;background:var(--blue);transition:width .3s}
+nav a:hover,nav a.active{color:var(--blue)}
+nav a.active:after,nav a:hover:after{width:100%}
+.menu-toggle{display:none;width:42px;height:40px;border:1px solid var(--line);background:transparent;color:var(--blue);font-size:21px}
+
+/* Hero */
+.hero{position:relative;min-height:min(770px,88vh);display:grid;place-items:center;overflow:hidden;padding:85px 20px;text-align:center;color:#fff;background:linear-gradient(100deg,rgba(48,43,42,.72),rgba(82,104,121,.46),rgba(48,43,42,.72)),url("./handpicture.jpg") center 45%/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:17px;border:1px solid #B99B82A6;pointer-events:none}
+.hero:after{content:"";position:absolute;inset:25px;border:1px solid #B99B8255;pointer-events:none}
+.hero-content{position:relative;z-index:1;width:min(900px,100%);animation:fadeUp 1.2s ease both}
+.hero-monogram{width:69px;height:69px;object-fit:contain;margin:0 auto 22px;filter:brightness(0) invert(1);opacity:.9}
+.eyebrow,.kicker{display:block;color:var(--blue);font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
+.hero .eyebrow{color:#F1E8DE}
+.hero-couple{display:flex;flex-direction:column;align-items:center;gap:0;margin:24px 0 0;font:400 clamp(64px,10vw,112px)/.95 var(--script)}
+.hero-person{color:#FFFCF8}
+.hero-person small{display:block;margin-bottom:10px;color:#E6D8C9;font:700 9px var(--sans);letter-spacing:.28em}
+.hero-amp{margin:8px 0;color:#B99B82;font:italic 35px var(--editorial)}
+.hero-subtitle{margin-top:29px;color:#F0E7DD;font-size:9px;letter-spacing:.2em;text-transform:uppercase}
+.rule{width:65px;height:1px;margin:23px auto;background:var(--champagne)}
+.hero-date{color:#fff;font:500 29px var(--editorial);letter-spacing:.08em}
+.hero-blessing{margin:15px auto 0;color:#F0E7DD;font:italic 20px var(--editorial)}
+.scroll-cue{position:absolute;bottom:25px;color:#E8DCCF;font-size:8px;letter-spacing:.22em;animation:shimmer 2s infinite}
+
+/* Shared sections */
+section{padding:88px 22px}
+.inner{width:min(1120px,100%);margin:auto}
+.heading{margin:0 auto 28px;text-align:center}
+.heading .kicker{margin-bottom:13px;color:var(--blue)}
+.heading h2{margin:0;color:var(--charcoal);font:500 clamp(38px,5.7vw,64px)/1.08 var(--serif)}
+.heading p{max-width:650px;margin:17px auto 0;color:var(--muted);font-size:12px;line-height:2}
+
+/* Story */
+.intro{position:relative;overflow:hidden;text-align:center;background:var(--paper)}
+.intro:before{content:"";position:absolute;top:-210px;left:50%;width:340px;height:340px;transform:translateX(-50%);border:1px solid #B99B8280;border-radius:50%;box-shadow:0 0 0 20px #B99B8220,0 0 0 40px #B99B8212}
+.quote{position:relative;max-width:790px;margin:37px auto 0;color:var(--blue);font:italic clamp(24px,4vw,37px)/1.5 var(--editorial)}
+.quran{margin-top:20px;color:var(--mocha);font:600 11px var(--sans);letter-spacing:.12em}
+.intro-copy{max-width:680px;margin:27px auto 0;color:var(--muted);font-size:12px;line-height:2.2}
+.arabic-quote{margin-top:28px;color:var(--blue);font:27px/1.8 var(--arabic);direction:rtl}
+
+/* Family */
+.family{background:#F0E7E2}
+.family-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:23px;margin-top:38px}
+.family-card{position:relative;padding:38px 25px;overflow:hidden;text-align:center;background:var(--paper);border:1px solid var(--line);box-shadow:0 12px 35px #342D310B}
+.family-card:before{content:"";position:absolute;inset:9px;border:1px solid var(--line);pointer-events:none}
+.family-label{display:inline-block;padding:8px 17px;border:1px solid var(--champagne);color:var(--blue);font-size:8px;font-weight:700;letter-spacing:.19em;text-transform:uppercase}
+.family-name-kicker{margin-top:19px;color:var(--mocha);font-size:9px;letter-spacing:.3em}
+.family-card h3{margin:7px 0;color:var(--charcoal);font:400 clamp(49px,6vw,69px) var(--script)}
+.family-name-rule{display:flex;align-items:center;gap:10px;max-width:120px;margin:15px auto;color:var(--mocha)}
+.family-name-rule:before,.family-name-rule:after{content:"";flex:1;height:1px;background:var(--champagne)}
+.family-relation{margin:12px 0 6px;color:var(--muted);font:italic 18px var(--editorial)}
+.family-parents{margin:5px auto;color:var(--charcoal);font:italic 22px/1.5 var(--editorial)}
+.parent-amp{padding:0 5px;color:var(--mocha)}
+.family-small{margin-top:19px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:9px;letter-spacing:.05em}
+.hosts{position:relative;margin-top:34px;padding:38px 25px;text-align:center;background:#F8F5F0;border:1px solid var(--champagne)}
+.hosts:before{content:"";position:absolute;inset:8px;border:1px solid var(--line);pointer-events:none}
+.host-title{color:var(--blue);font-size:9px;letter-spacing:.18em;text-transform:uppercase;line-height:1.8}
+.hosts h3{margin:13px 0;color:var(--charcoal);font:500 40px var(--editorial)}
+.hosts p{margin:10px 0;color:var(--charcoal);font:italic 22px var(--editorial)}
+.couple-showcase{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;margin-top:37px}
+.couple-crest{display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--mocha)}
+.crest-line{width:1px;height:38px;background:linear-gradient(transparent,var(--champagne),transparent)}
+.crest-medallion{width:76px;height:76px;display:grid;place-items:center;border:1px solid var(--champagne);border-radius:50%;background:var(--paper)}
+.crest-medallion img{width:50px;height:50px;object-fit:contain}
+.crest-caption{font:italic 18px var(--editorial)}
+
+/* Remembrance */
+.remembrance{position:relative;max-width:770px;margin:52px auto 0;padding:39px 28px;text-align:center;background:var(--paper);border:1px solid var(--champagne)}
+.remembrance:before{content:"";position:absolute;inset:8px;border:1px solid var(--line);pointer-events:none}
+.remembrance-ornament{color:var(--mocha);font-size:22px}
+.remembrance-kicker{margin-top:9px;color:var(--blue);font-size:8px;letter-spacing:.24em;text-transform:uppercase}
+.remembrance h3{margin:10px 0;color:var(--charcoal);font:500 clamp(35px,5vw,49px) var(--editorial)}
+.remembrance-rule{width:52px;height:1px;margin:17px auto;background:var(--champagne)}
+.remembrance-name{margin:0;color:var(--charcoal);font:500 clamp(22px,3vw,29px) var(--editorial)}
+.remembrance-relation{margin:8px 0;color:var(--blue);font:italic 18px var(--editorial)}
+.remembrance-message{max-width:550px;margin:18px auto 0;color:var(--muted);font:italic 17px/1.8 var(--editorial)}
+.remembrance-dua{margin-top:13px;color:var(--blue);font:italic 17px/1.8 var(--editorial)}
+
+/* Countdown */
+.countdown-section{position:relative;overflow:hidden;background:var(--blue-deep);color:#fff;text-align:center}
+.countdown-section:before{content:"";position:absolute;inset:15px;border:1px solid #B99B8280;pointer-events:none}
+.countdown-section .inner{position:relative;z-index:1}
+.countdown-section .heading h2{color:var(--warm-white)}
+.countdown-section .heading .kicker{color:#EADBD6}
+.countdown-section .heading p{color:#776B6D}
+.countdown{display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(20px,5vw,60px);margin-top:39px}
+.count-item{min-width:75px}
+.count-number{display:block;color:#EADBD6;font:500 clamp(43px,7vw,70px)/1 var(--editorial);font-variant-numeric:tabular-nums}
+.count-label{display:block;margin-top:11px;color:#F1EAE2;font-size:8px;letter-spacing:.2em;text-transform:uppercase}
+
+/* Events — equal-height cards and uncropped invitation art */
+.events{background:var(--warm-white)}
+.event-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:42px;align-items:stretch}
+.event-card{position:relative;display:flex;flex-direction:column;min-width:0;height:100%;overflow:hidden;background:var(--paper);border:1px solid var(--line);box-shadow:0 12px 35px #342D310C;transition:transform .35s,box-shadow .35s}
+.event-card:hover{transform:translateY(-6px);box-shadow:0 19px 42px #342D3118}
+.event-card:before{content:"";position:absolute;inset:7px;z-index:2;border:1px solid #B99B8280;pointer-events:none}
+.event-image-frame{position:relative;height:420px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:13px;background:#F0ECE6;border-bottom:1px solid var(--line);flex:0 0 420px}
+.event-image-button{display:flex;width:100%;height:100%;align-items:center;justify-content:center;padding:0;border:0;background:transparent}
+.event-image-frame img{width:100%;height:100%;object-fit:contain;object-position:center;transition:transform .5s}
+.event-card:hover .event-image-frame img{transform:scale(1.015)}
+.event-content{display:flex;flex-direction:column;flex:1;padding:28px 21px 25px;text-align:center}
+.event-number{color:var(--blue);font-size:8px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.event-content h3{margin:12px 0 5px;color:var(--charcoal);font:500 clamp(29px,3vw,39px)/1.1 var(--serif)}
+.event-tagline{min-height:46px;margin:9px 0 17px;color:var(--mocha);font:italic 18px/1.35 var(--editorial)}
+.event-detail{margin:8px 0;color:#68615D;font-size:11px;line-height:1.8}
+.event-detail strong{color:var(--charcoal);font-weight:700}
+.event-venue{max-width:340px;margin:10px auto}
+.event-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:22px}
+.event-map,.card-download{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:11px 14px;border:1px solid var(--blue);color:var(--blue);font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:.25s}
+.event-map:hover{background:var(--blue);color:#fff}
+.card-download{border-color:var(--blue);background:var(--blue);color:#fff}
+.card-download:hover{background:var(--blue-deep);border-color:var(--blue-deep)}
+.program{max-width:340px;margin:17px auto 0;padding:13px 4px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.program span{display:inline-block;margin:4px 6px;color:var(--blue);font:19px var(--editorial)}
+.program small{display:block;margin-top:8px;color:var(--mocha);font:18px var(--arabic)}
+
+
+/* Gallery */
+.gallery{background:#F0E7E2}
+
+/* =========================================
+   PHOTO WALL — PINTEREST INSPIRED GALLERY
+========================================= */
+
+.photo-wall {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(16px, 2.5vw, 30px);
+    width: min(100%, 1000px);
+    margin: 55px auto 35px;
+    align-items: center;
+}
+
+/* Individual photograph frames */
+
+.photo-wall figure {
+    position: relative;
+    min-width: 0;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    background: #FFFCF8;
+    border: 1px solid #D8C5B9;
+    box-shadow: 0 12px 32px rgba(52, 45, 49, 0.09);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Subtle Pinterest-style stagger */
+
+.photo-wall figure:nth-child(1) {
+    transform: translateY(-12px) rotate(-1deg);
+}
+
+.photo-wall figure:nth-child(2) {
+    transform: translateY(18px);
+}
+
+.photo-wall figure:nth-child(3) {
+    transform: translateY(-12px) rotate(1deg);
+}
+
+/* Hover effect */
+
+.photo-wall figure:nth-child(1):hover,
+.photo-wall figure:nth-child(2):hover,
+.photo-wall figure:nth-child(3):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(52, 45, 49, 0.15);
+}
+
+/* Image container */
+
+.gallery-image-button {
+    display: flex;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    border: none;
+    background: #F0E7E2;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+/* Actual photographs */
+
+.photo-wall img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.6s ease;
+}
+
+.photo-wall figure:hover img {
+    transform: scale(1.035);
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 760px) {
+    .photo-wall {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        width: min(100%, 680px);
+        margin: 40px auto 20px;
+    }
+
+    .photo-wall figure:nth-child(1),
+    .photo-wall figure:nth-child(2),
+    .photo-wall figure:nth-child(3) {
+        transform: none;
+    }
+
+    .photo-wall figure:nth-child(3) {
+        grid-column: 1 / -1;
+        width: min(75%, 340px);
+        justify-self: center;
+    }
+
+    .photo-wall figure:hover {
+        transform: translateY(-4px);
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 480px) {
+    .photo-wall {
+        grid-template-columns: 1fr;
+        width: min(100%, 370px);
+        gap: 22px;
+        margin: 32px auto;
+    }
+
+    .photo-wall figure:nth-child(1),
+    .photo-wall figure:nth-child(2),
+    .photo-wall figure:nth-child(3) {
+        grid-column: auto;
+        width: 100%;
+        transform: none;
+    }
+
+    .photo-wall figure {
+        padding: 9px;
+    }
+
+    .gallery-image-button {
+        aspect-ratio: 4 / 5;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .photo-wall figure,
+    .photo-wall img {
+        transition: none;
+    }
+}
+
+/* RSVP and blessings */
+.blessings{position:relative;color:#fff;background:var(--blue-deep)}
+.blessings:before{content:"";position:absolute;inset:15px;border:1px solid #B99B8280;pointer-events:none}
+.blessings .inner{position:relative;z-index:1}
+.blessings .heading h2{color:var(--warm-white)}
+.blessings .heading .kicker{color:#EADBD6}
+.blessings .heading p{color:#776B6D}
+.blessing-form{width:min(650px,100%);margin:38px auto 0;padding:clamp(22px,5vw,43px);border:1px solid #B99B8299;background:#ffffff08}
+.form-section-title{margin:5px 0 20px;padding-bottom:11px;border-bottom:1px solid #B99B8266;color:#EADBD6;font:italic 25px var(--editorial)}
+.form-row{margin-bottom:19px}
+.blessing-form label{display:block;margin-bottom:9px;color:#55404B;font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+.blessing-form input,.blessing-form select,.blessing-form textarea{width:100%;min-height:47px;padding:13px 14px;border:1px solid #B99B8280;border-radius:0;outline:none;background:#ffffff10;color:#fff;font-size:12px}
+.blessing-form input::placeholder,.blessing-form textarea::placeholder{color:#A99B96}
+.blessing-form select option{color:var(--charcoal);background:#fff}
+.blessing-form input:focus,.blessing-form select:focus,.blessing-form textarea:focus{border-color:#55404B}
+.blessing-form textarea{min-height:120px;resize:vertical}
+.blessing-form input[type=number]{max-width:150px}
+.form-help{margin-top:7px;color:#897C7B;font-size:9px;line-height:1.7}
+.submit-button{width:100%;min-height:50px;padding:14px;border:1px solid #B99B82;background:#B99B82;color:var(--charcoal);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:.3s}
+.submit-button:hover{background:#F8F4EF;border-color:#F8F4EF}
+.submit-button:disabled{opacity:.6;cursor:wait}
+.form-status{min-height:27px;margin:15px 0 0;color:#55404B;text-align:center;font-size:11px;line-height:1.7}
+.form-note{margin:8px 0 0;color:#897C7B;text-align:center;font-size:9px;line-height:1.8}
+.honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* Footer */
+footer{position:relative;overflow:hidden;padding:57px 20px 30px;color:#fff;text-align:center;background:#55404B}
+footer:before{content:"";position:absolute;inset:13px;border:1px solid #B99B8266;pointer-events:none}
+footer img{position:relative;width:59px;height:59px;object-fit:contain;margin:0 auto 14px;filter:brightness(0) invert(1);opacity:.9}
+footer h2{margin:0;color:var(--warm-white);font:400 50px var(--script)}
+.footer-script{margin:10px 0 15px;color:#EADBD6;font:italic 24px var(--editorial)}
+footer p{margin:8px 0;color:#897C7B;font-size:9px;letter-spacing:.1em}
+footer .copyright{margin-top:25px;color:#C9C4BE;font-size:8px;letter-spacing:.16em}
+
+/* Music control */
+.music-control{position:fixed;right:19px;bottom:19px;z-index:150;display:none;min-width:105px;min-height:40px;padding:10px 15px;border:1px solid var(--champagne);border-radius:30px;background:var(--blue);color:#fff;font-size:8px;letter-spacing:.1em;box-shadow:0 5px 20px #342D3125}
+.music-control.visible {
+    display: none !important;
+}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;z-index:3000;display:none;align-items:center;justify-content:center;padding:50px 65px;background:rgba(28,34,38,.95)}
+.lightbox.active{display:flex}
+.lightbox-content{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+.lightbox img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 15px 70px #0006}
+.lightbox-close,.lightbox-arrow{position:absolute;display:grid;place-items:center;border:1px solid #B99B8299;background:var(--blue);color:#fff;transition:.2s}
+.lightbox-close:hover,.lightbox-arrow:hover{background:var(--blue-deep)}
+.lightbox-close{top:18px;right:20px;width:43px;height:43px;font-size:25px}
+.lightbox-arrow{top:50%;width:44px;height:55px;transform:translateY(-50%);font-size:26px}
+.lightbox-prev{left:14px}.lightbox-next{right:14px}
+.lightbox-caption{position:absolute;bottom:16px;left:0;right:0;color:#EADBD6;text-align:center;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+
+/* Responsive */
+@media(max-width:1050px){
+  header{padding-left:20px;padding-right:20px}.nav-area{gap:14px}nav{gap:13px}nav a{font-size:8px}
+  .event-grid{gap:15px}.event-image-frame{height:360px;flex-basis:360px}.event-content{padding-left:15px;padding-right:15px}
+}
+@media(max-width:760px){
+  header{min-height:61px;padding:10px 16px}.brand{font-size:23px}.brand img{width:30px;height:30px}
+  .menu-toggle{display:block}.nav-area{position:absolute;top:100%;left:0;right:0;display:none;padding:17px 18px 22px;background:var(--warm-white);border-bottom:1px solid var(--line);box-shadow:0 12px 20px #342D3110}
+  .nav-area.open{display:block}nav{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  nav a{display:block;padding:13px 5px;border-bottom:1px solid var(--line);font-size:9px}nav a:after{display:none}
+  .hero{min-height:78svh;padding:70px 18px 85px;background-position:center}.hero-monogram{width:57px;height:57px}
+  .hero-couple{font-size:clamp(67px,15vw,91px)}.hero-amp{font-size:29px}.hero-date{font-size:24px}.hero-blessing{font-size:18px;line-height:1.6}
+  section{padding:66px 17px}.family-grid{grid-template-columns:1fr;gap:17px}
+  .couple-showcase{grid-template-columns:1fr;gap:17px}.couple-crest{flex-direction:row;justify-content:center}
+  .crest-line{width:35px;height:1px;background:linear-gradient(90deg,transparent,var(--champagne),transparent)}
+  .crest-medallion{width:61px;height:61px}.crest-medallion img{width:41px;height:41px}
+  .event-grid{grid-template-columns:1fr;gap:23px}.event-card{width:min(100%,500px);margin:auto}
+  .event-image-frame{height:clamp(330px,100vw,480px);flex-basis:clamp(330px,100vw,480px)}
+  .event-content{padding:28px 22px 30px}.event-tagline{min-height:0}
+  .photo-wall{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:100%;margin:30px auto 0}
+  .photo-wall figure:nth-child(even){transform:none}.gallery-image-button{min-height:190px}
+  .lightbox{padding:55px 18px}.lightbox-arrow{width:38px;height:48px}.lightbox-prev{left:5px}.lightbox-next{right:5px}
+}
+@media(max-width:430px){
+  .opening-card{padding:28px 18px}.opening h1{font-size:clamp(54px,16vw,72px)}
+  .bismillah{font-size:31px}.opening-overline{font-size:16px}
+  .photo-wall{grid-template-columns:1fr;width:min(100%,390px)}.gallery-image-button{min-height:220px}
+  .countdown{gap:24px}.count-item{min-width:65px}
+  .event-actions{flex-direction:column}.event-map,.card-download{width:min(100%,230px)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}.particle{display:none}
+}
+
+
+/* =========================================================
+   PINTEREST-INSPIRED PALETTE + TYPOGRAPHY OVERRIDES
+   Warm ivory · dusty rose · muted sage · deep plum · champagne
+========================================================= */
+:root{
+  --warm-white:#F8F4EF;
+  --champagne:#B99B82;
+  --mocha:#9A7778;
+  --blue:#A0A995;
+  --blue-deep:#55404B;
+  --charcoal:#342D31;
+  --muted:#776B6D;
+  --paper:#FFFCF8;
+  --line:#E5D8D1;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --editorial:"Cormorant Garamond",Georgia,serif;
+  --script:"Parisienne",cursive;
+  --sans:"DM Sans",Arial,sans-serif;
+  --arabic:"Amiri",serif;
+}
+html{scroll-behavior:smooth}
+body,button,input,textarea,select{font-family:var(--sans)}
+body{background:var(--warm-white);color:var(--charcoal)}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--mocha);outline-offset:4px}
+::selection{background:var(--blue-deep);color:#fff}
+header{background:#F8F4EFED;border-bottom-color:var(--line)}
+.brand{color:var(--blue-deep)}
+nav a:hover,nav a.active{color:var(--mocha)}
+nav a:after{background:var(--mocha)}
+.menu-toggle{color:var(--blue-deep)}
+.hero{background-image:linear-gradient(100deg,rgba(52,45,49,.78),rgba(85,64,75,.48),rgba(52,45,49,.72)),url("./handpicture.jpg")}
+.hero:before,.hero:after{border-color:#B99B82A6}
+.hero-person{color:#FFFCF8}
+.hero-amp,.hero-person small,.hero-subtitle,.hero-blessing,.scroll-cue{color:#EADBD6}
+.heading h2,.family-card h3,.hosts h3,.remembrance h3,.event-content h3{color:var(--blue-deep)}
+.heading .kicker,.eyebrow,.event-number,.family-name-kicker,.host-title,.remembrance-kicker{color:var(--mocha)}
+.intro,.events,.blessings{background:var(--warm-white)}
+.family,.gallery{background:#F0E7E2}
+.family-card,.remembrance,.hosts,.event-card,.photo-wall figure{background:var(--paper);border-color:var(--line)}
+.family-card:before,.hosts:before,.remembrance:before,.event-card:before{border-color:#E5D8D1}
+.family-label{color:var(--blue-deep);border-color:var(--champagne)}
+.family-parents,.hosts p,.remembrance-name{color:var(--charcoal)}
+.family-name-rule,.parent-amp,.remembrance-ornament,.remembrance-relation{color:var(--mocha)}
+.remembrance-dua,.quote,.arabic-quote{color:var(--blue-deep)}
+.countdown-section{background:var(--blue-deep)}
+.countdown-section:before{border-color:#B99B8277}
+.countdown-section .heading h2{color:var(--warm-white)}
+.countdown-section .heading .kicker,.count-number{color:#D9BFB5}
+.countdown-section .heading p,.count-label{color:#E9DFDB}
+.event-image-frame,.gallery-image-button{background:#F0E7E2}
+.event-tagline,.program span{color:var(--mocha)}
+.event-map{border-color:var(--blue-deep);color:var(--blue-deep)}
+.event-map:hover{background:var(--blue-deep);color:#fff}
+.card-download{border-color:var(--blue-deep);background:var(--blue-deep);color:#fff}
+.card-download:hover{border-color:#80616B;background:#80616B}
+.program small{color:var(--mocha)}
+footer{background:var(--blue-deep);color:#FFFCF8}
+footer:before{border-color:#B99B8277}
+footer h2{color:var(--warm-white)}
+footer .footer-script{color:#EADBD6}
+footer p{color:#E9DFDB}
+footer .copyright{color:#D9BFB5}
+.music-control{background:var(--blue-deep);border-color:var(--champagne)}
+
+/* Blessings: an elegant note-card with soft stationery details */
+.blessings{
+  position:relative;overflow:hidden;color:var(--charcoal);
+  background:
+    radial-gradient(ellipse at 12% 10%,#F0E2DE 0%,transparent 38%),
+    radial-gradient(ellipse at 90% 88%,#E5E9DF 0%,transparent 35%),
+    #F8F4EF;
+}
+.blessings:before{content:"";position:absolute;inset:16px;border:1px solid #B99B82;pointer-events:none}
+.blessings:after{content:"";position:absolute;width:300px;height:300px;right:-125px;top:-135px;border:1px solid #B99B8280;border-radius:50%;box-shadow:0 0 0 18px #B99B8218,0 0 0 38px #B99B8212;pointer-events:none}
+.blessings .inner{position:relative;z-index:1}
+.blessings .heading{text-align:center;max-width:720px;margin:0 auto}
+.blessings .heading .kicker{color:var(--mocha);font:italic 19px var(--editorial);letter-spacing:.08em;text-transform:none}
+.blessings .heading h2{color:var(--blue-deep);font:500 clamp(43px,6vw,68px)/1.05 var(--serif);letter-spacing:-.025em}
+.blessings .heading p{max-width:510px;margin:15px auto 0;color:var(--muted);font:400 18px/1.75 var(--editorial)}
+.blessing-form{position:relative;width:min(610px,100%);margin:42px auto 0;padding:clamp(27px,5vw,48px);background:var(--paper);border:1px solid var(--champagne);box-shadow:0 22px 65px #49394312}
+.blessing-form:before{content:"";position:absolute;inset:9px;border:1px solid #E9DDD7;pointer-events:none}
+.blessing-form>*{position:relative}
+.form-section-title{margin:0 0 25px;padding:0 0 14px;border-bottom:1px solid var(--line);color:var(--mocha);text-align:center;font:italic 29px/1.2 var(--editorial)}
+.form-row{margin-bottom:24px}
+.blessing-form label{display:block;margin-bottom:10px;color:var(--blue-deep);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+.blessing-form label span{color:var(--mocha)}
+.blessing-form input,.blessing-form select,.blessing-form textarea{width:100%;min-height:52px;padding:15px 16px;border:1px solid #E1D4CD;border-radius:2px;outline:none;background:#FBF7F3;color:var(--charcoal);font-size:13px;transition:border-color .25s,background .25s,box-shadow .25s}
+.blessing-form input::placeholder,.blessing-form textarea::placeholder{color:#A99B96}
+.blessing-form select option{color:var(--charcoal);background:var(--paper)}
+.blessing-form input:focus,.blessing-form select:focus,.blessing-form textarea:focus{border-color:var(--mocha);background:#fff;box-shadow:0 0 0 3px #9A77781A}
+.blessing-form textarea{min-height:150px;resize:vertical;line-height:1.7}
+.submit-button{display:block;width:min(240px,100%);min-height:53px;margin:12px auto 0;padding:15px 25px;border:1px solid var(--blue-deep);background:var(--blue-deep);color:var(--paper);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;transition:background .3s,border-color .3s,transform .3s}
+.submit-button:hover{background:#80616B;border-color:#80616B;transform:translateY(-2px)}
+.submit-button:disabled{opacity:.6;cursor:wait}
+.form-status{min-height:27px;margin:17px 0 0;color:var(--blue-deep);text-align:center;font-size:12px;line-height:1.7}
+.form-note{margin:18px 0 0;color:#897C7B;text-align:center;font:italic 17px/1.7 var(--editorial)}
+.honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media(max-width:600px){
+  .blessings{padding:78px 18px}
+  .blessings:before{inset:9px}
+  .blessing-form{margin-top:35px;padding:27px 22px}
+  .blessings .heading p{font-size:17px}
+  .submit-button{width:100%}
+}
+
+</style>
+</head>
+
+<body class="locked">
+
+<!-- OPENING INVITATION -->
+
+<div class="opening" id="opening" aria-label="Wedding invitation opening screen">
+  <div class="opening-arch"></div>
+  <div class="opening-arch small"></div>
+
+  <span class="opening-ornament one">✧</span>
+  <span class="opening-ornament two">✧</span>
+  <span class="opening-ornament three">✧</span>
+  <span class="opening-ornament four">✧</span>
+
+  <div class="particles" aria-hidden="true">
+    <i class="particle" style="--left:8%;--size:20px;--duration:15s;--delay:-3s"></i>
+    <i class="particle" style="--left:20%;--size:12px;--duration:12s;--delay:-6s"></i>
+    <i class="particle" style="--left:35%;--size:24px;--duration:17s;--delay:-8s"></i>
+    <i class="particle" style="--left:50%;--size:15px;--duration:14s;--delay:-4s"></i>
+    <i class="particle" style="--left:65%;--size:22px;--duration:18s;--delay:-10s"></i>
+    <i class="particle" style="--left:80%;--size:13px;--duration:13s;--delay:-5s"></i>
+    <i class="particle" style="--left:93%;--size:20px;--duration:16s;--delay:-9s"></i>
+  </div>
+
+  <div class="opening-card">
+    <div class="opening-kicker">MEHFIL-E-NOOR · 6 Rajab 1448 AH</div>
+
+    <div class="bismillah" aria-label="Bismillah">
+      بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+    </div>
+
+    <div class="opening-overline">A gathering of duas · A promise of forever</div>
+
+    <h1>
+      <span>Danish</span>
+      <span class="amp">&amp;</span>
+      <span>Alfiya</span>
+    </h1>
+
+    <div class="opening-script">A beautiful beginning, by His grace.</div>
+
+    <div class="opening-divider" aria-hidden="true">✧</div>
+
+    <div class="opening-date">
+      16 DECEMBER 2026
+      <small>WEDNESDAY · 7:00 PM ONWARDS</small>
+    </div>
+
+    <p>
+      With hearts full of gratitude, our families invite you
+      to share in the joy of this blessed union.
+    </p>
+
+    <button class="open-button" id="openInvite" type="button">
+      Open Invitation
+    </button>
+
+    <div class="opening-note">WITH LOVE · FAITH · AND A THOUSAND DUAS</div>
+  </div>
+
+  <div class="opening-curtain left"></div>
+  <div class="opening-curtain right"></div>
+</div>
+
+<!-- AUDIO -->
+
+<audio id="weddingMusic" loop preload="none">
+  <source src="./Guzarish%20Satinder%20Sartaj%20Instrumental.mp3" type="audio/mpeg">
+</audio>
+
+<!-- NAVIGATION -->
+
+<header>
+  <a class="brand" href="#home" aria-label="Danish and Alfiya home">
+    <img src="./AD-monogram.png" alt="">
+    <span>Danish &amp; Alfiya</span>
+  </a>
+
+  <div class="nav-area" id="navArea">
+    <nav aria-label="Main navigation">
+      <a href="#story">Our Story</a>
+      <a href="#family">Our Families</a>
+      <a href="#remembrance">In Loving Memory</a>
+      <a href="#events">Celebrations</a>
+      <a href="#gallery">Memories</a>
+      <a href="#blessings">RSVP &amp; Blessings</a>
+    </nav>
+  </div>
+
+  <button class="menu-toggle" id="menuToggle"
+          type="button" aria-label="Open navigation menu"
+          aria-expanded="false" aria-controls="navArea">
+    ☰
+  </button>
+</header>
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <img class="hero-monogram"
+           src="./AD-monogram.png"
+           alt="Danish and Alfiya monogram">
+
+      <div class="eyebrow">A celebration of love, faith &amp; family</div>
+
+      <h1 class="hero-couple">
+        <span class="hero-person">
+          <small>THE GROOM</small>
+          Danish
+        </span>
+
+        <span class="hero-amp" aria-hidden="true">&amp;</span>
+
+        <span class="hero-person">
+          <small>THE BRIDE</small>
+          Alfiya
+        </span>
+      </h1>
+
+      <div class="hero-subtitle">
+        A blessed beginning · A lifetime of love
+      </div>
+
+      <div class="rule"></div>
+
+      <div class="hero-date">16 December 2026</div>
+
+      <p class="hero-blessing">
+        A new chapter, written with faith and filled with love.
+      </p>
+    </div>
+
+    <div class="scroll-cue">SCROLL TO EXPLORE ↓</div>
+  </section>
+
+  <!-- ISLAMIC INTRODUCTION -->
+
+  <section class="intro" id="story">
+    <div class="inner reveal">
+      <div class="heading">
+        <span class="kicker">With gratitude and love</span>
+        <h2>A Promise of Forever</h2>
+      </div>
+
+      <p class="quote">
+        “And among His signs is that He created for you spouses
+        that you may find tranquillity in them; and He placed
+        between you affection and mercy.”
+      </p>
+
+      <div class="quran">Qur’an · Surah Ar-Rum · 30:21</div>
+
+      <div class="arabic-quote" lang="ar">
+        وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ
+        أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا
+        وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+      </div>
+
+      <div class="rule"></div>
+
+      <p class="intro-copy">
+        With grateful hearts and the love of our families,
+        we are delighted to invite you to celebrate the
+        beginning of our new journey. Your presence, duas
+        and blessings will make these moments even more meaningful.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAMILY -->
+
+  <section class="family" id="family">
+    <div class="inner">
+
+      <div class="heading reveal">
+        <span class="kicker">Two families · One beautiful bond</span>
+        <h2>With the Blessings of Our Families</h2>
+        <p>
+          Surrounded by the love, duas and blessings of those
+          who mean the world to us.
+        </p>
+      </div>
+
+      <!-- GROOM'S GRANDPARENTS AS HOSTS -->
+
+      <div class="hosts reveal">
+        <div class="host-title">
+          Hosted with love and blessings by the groom's grandparents
+        </div>
+
+        <h3>Our Beloved Hosts</h3>
+
+        <p>
+          Mrs. Julekha
+          <span class="parent-amp">&amp;</span>
+          Late Mr. Ahmed Mukadam
+        </p>
+
+        <div class="rule"></div>
+
+        <p>
+          Mrs. Roshanbi
+          <span class="parent-amp">&amp;</span>
+          Late Mr. Abdul Latif Thakur
+        </p>
+      </div>
+
+      <!-- COUPLE -->
+
+      <div class="couple-showcase">
+
+        
+        <article class="family-card reveal">
+          <div class="family-label">The Bride</div>
+  
+          <h3>Alfiya</h3>
+
+          <div class="family-name-rule">✦</div>
+
+          <p class="family-relation">Daughter of</p>
+
+          <p class="family-parents">
+            Mrs. Rabiyabi
+            <span class="parent-amp">&amp;</span>
+            Mr. Ashfaque Mukadam
+          </p>
+
+          <div class="family-small">
+            With love and gratitude to her family
+          </div>
+        </article>
+
+       
+
+        <div class="couple-crest" aria-label="Danish and Alfiya monogram">
+          <span class="crest-line"></span>
+          <div class="crest-medallion">
+            <img src="./AD-monogram.png"
+                 alt="A and D monogram">
+          </div>
+          <span class="crest-line"></span>
+        </div>
+
+   <article class="family-card reveal">
+          <div class="family-label">The Groom</div>
+          <h3>Danish</h3>
+
+          <div class="family-name-rule">✦</div>
+
+          <p class="family-relation">Son of</p>
+
+          <p class="family-parents">
+            Mrs. Heena
+            <span class="parent-amp">&amp;</span>
+            Mr. Feroz Khan
+          </p>
+
+          <div class="family-small">
+            With love and gratitude to his family
+          </div>
+        </article>
+      </div>
+
+      <!-- MEMORY -->
+
+      <aside class="remembrance reveal" id="remembrance"
+             aria-label="In loving memory">
+
+        <div class="remembrance-ornament">✧</div>
+
+        <div class="remembrance-kicker">Remembered with love</div>
+
+        <h3>In Loving Memory</h3>
+
+        <div class="remembrance-rule"></div>
+
+        <p class="remembrance-name">Late Mr. Mansur Ali Abdul Latif Thakur</p>
+
+        <p class="remembrance-relation">Beloved Uncle of the Groom</p>
+
+        <p class="remembrance-message">
+          Though he is no longer with us, his memory remains
+          close to our hearts. He is lovingly remembered as
+          our family gathers to celebrate this blessed occasion.
+        </p>
+
+        <div class="remembrance-dua">
+          May Allah grant him the highest place in
+          Jannat-ul-Firdous. Aameen.
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+
+  <section class="countdown-section">
+    <div class="inner reveal">
+
+      <div class="heading">
+        <span class="kicker">The countdown is on</span>
+        <h2>Until Our Big Day</h2>
+        <p>
+          Every moment brings us closer to this beautiful beginning.
+        </p>
+      </div>
+
+      <div class="countdown" aria-label="Countdown to the Nikah">
+        <div class="count-item">
+          <span class="count-number" id="days">--</span>
+          <span class="count-label">Days</span>
+        </div>
+
+        <div class="count-item">
+          <span class="count-number" id="hours">--</span>
+          <span class="count-label">Hours</span>
+        </div>
+
+        <div class="count-item">
+          <span class="count-number" id="minutes">--</span>
+          <span class="count-label">Minutes</span>
+        </div>
+
+        <div class="count-item">
+          <span class="count-number" id="seconds">--</span>
+          <span class="count-label">Seconds</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- THREE CELEBRATIONS ONLY -->
+
+  <section class="events" id="events">
+    <div class="inner">
+
+      <div class="heading reveal">
+        <span class="kicker">Save the dates</span>
+        <h2>Wedding Celebrations</h2>
+        <p>
+          With the blessings of our families, we warmly invite
+          you to join us for Danish's Haldi, our Nikah and the Walima.
+        </p>
+      </div>
+
+  
+        <!-- EVENT 2: NIKAH -->
+
+        <article class="event-card reveal">
+
+          <div class="event-image-frame">
+            <button class="event-image-button"
+                    type="button"
+                    data-lightbox="./nikah_image.jpeg"
+                    data-caption="Mehfil-e-Noor · Alfiya & Danish"
+                    aria-label="Enlarge Nikah invitation">
+              <img src="./nikah_image.jpeg"
+                   alt="Danish and Alfiya's Nikah invitation"
+                   loading="lazy">
+            </button>
+          </div>
+
+          <div class="event-content">
+            <div class="event-number">Celebration 02 · The Nikah</div>
+
+            <h3>Mehfil-e-Noor</h3>
+
+            <p class="event-tagline">
+              A Gathering of Light, Faith &amp; Blessings
+            </p>
+
+            <p class="event-detail">
+              <strong>Danish &amp; Alfiya</strong>
+            </p>
+
+            <p class="event-detail">
+              <strong>Wednesday, 16 December 2026</strong>
+            </p>
+
+            <p class="event-detail"><strong>6 Rajab 1448 AH</strong></p>
+
+            <p class="event-detail"><strong>7:00 PM onwards</strong></p>
+
+            <p class="event-detail"><strong>Venue</strong></p>
+
+            <p class="event-detail event-venue">
+              Noor Baug Hall, Behind Shimla Park,<br>
+              Opposite Talao Pali, Kausa,<br>
+              Mumbra – 400612
+            </p>
+
+            <div class="program">
+              <span>Bayaan</span>
+              <span>Naat</span>
+              <span>Nikah</span>
+              <span>Dinner</span>
+              <small>محفلِ نور</small>
+            </div>
+
+            <div class="event-actions">
+              <a class="event-map"
+                 href="https://www.google.com/maps/search/?api=1&query=Noor+Baug+Hall+Kausa+Mumbra+Thane"
+                 target="_blank" rel="noopener noreferrer">
+                View Venue ↗
+              </a>
+
+              <a class="card-download"
+                 href="./Nikah_Invitation.png"
+                 download="Mehfil-e-Noor_Nikah_Invitation.jpeg">
+                Download Invitation ↓
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- EVENT 3: WALIMA -->
+
+        <article class="event-card reveal">
+
+          <div class="event-image-frame">
+            <button class="event-image-button"
+                    type="button"
+                    data-lightbox="./walima_image.png"
+                    data-caption="Ta'am-al-Walima · Danish & Alfiya"
+                    aria-label="Enlarge Nikah invitation">
+              <img src="./walima_image.png"
+                   alt="Danish and Alfiya's Walima invitation"
+                   loading="lazy">
+            </button>
+          </div>
+
+          <div class="event-content">
+            <div class="event-number">Celebration 03 · The Walima</div>
+
+            <h3>Ta'am-al-Walima</h3>
+
+            <p class="event-tagline">
+              Together in joy, surrounded by love
+            </p>
+
+            <p class="event-detail">
+              <strong>Friday, 18 December 2026</strong>
+            </p>
+
+            <p class="event-detail">
+              <strong>7:00 PM onwards</strong>
+            </p>
+
+            <p class="event-detail"><strong>Venue</strong></p>
+
+            <p class="event-detail event-venue">
+              Noori Hall, Noori Baba Dargah Road,<br>
+              Makhmali Tank Road, Thane West,<br>
+              Thane, Maharashtra 400601
+            </p>
+
+            <div class="event-actions">
+              <a class="event-map"
+                 href="https://www.google.com/maps/search/?api=1&query=Noori+Hall+Noori+Baba+Dargah+Road+Thane+West+400601"
+                 target="_blank" rel="noopener noreferrer">
+                View Venue ↗
+              </a>
+
+              <a class="card-download"
+                 href="./Walima_Invitation.png"
+                 download="Taam-al-Walima_Invitation.png">
+                Download Invitation ↓
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="inner">
+      <div class="heading reveal">
+        <span class="kicker">Moments to treasure</span>
+        <h2>Little Moments, Forever Memories</h2>
+        <p>A few photographs, a thousand emotions and memories we will carry into forever.</p>
+      </div>
+      <div class="photo-wall">
+        <figure class="reveal">
+          <button class="gallery-image-button" type="button" data-lightbox="./engagement1.jpg" data-caption="A beautiful memory" aria-label="View engagement photograph one">
+            <img src="./engagement1.jpg" alt="Danish and Alfiya engagement memory one" loading="lazy">
+          </button>
+        </figure>
+        <figure class="reveal">
+          <button class="gallery-image-button" type="button" data-lightbox="./engagement2.jpg" data-caption="A beautiful memory" aria-label="View engagement photograph two">
+            <img src="./engagement2.jpg" alt="Danish and Alfiya engagement memory two" loading="lazy">
+          </button>
+        </figure>
+        <figure class="reveal">
+          <button class="gallery-image-button" type="button" data-lightbox="./engagement3.jpg" data-caption="A beautiful memory" aria-label="View engagement photograph three">
+            <img src="./engagement3.jpg" alt="Danish and Alfiya engagement memory three" loading="lazy">
+          </button>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP AND BLESSINGS -->
+
+  <section class="blessings" id="blessings">
+    <div class="inner">
+
+      <div class="heading reveal">
+        <span class="kicker">Your duas mean the world</span>
+        <h2>A Note, A Dua, A Blessing</h2>
+        <p>
+          Share a heartfelt message, a dua or a few words of love.
+          We would be delighted to read your wishes.
+        </p>
+      </div>
+
+      <form class="blessing-form reveal"
+            id="blessingForm"
+            method="POST"
+            target="blessingResponse">
+
+        <div class="form-section-title">A little note from you</div>
+
+        <div class="form-row">
+          <label for="guestName">Your Name <span aria-hidden="true">*</span></label>
+          <input id="guestName" name="name" type="text"
+                 placeholder="How shall we remember your wishes?"
+                 maxlength="100" required>
+        </div>
+
+        <div class="form-row">
+          <label for="relation">You Are</label>
+          <select id="relation" name="relation">
+            <option value="">Select (optional)</option>
+            <option value="Family">Family</option>
+            <option value="Friend">Friend</option>
+            <option value="Colleague">Colleague</option>
+            <option value="Relative">Relative</option>
+            <option value="Well-wisher">Well-wisher</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Your Blessing <span aria-hidden="true">*</span></label>
+          <textarea id="message" name="blessing"
+                    placeholder="A dua, a wish, or a few words from your heart..."
+                    maxlength="1500" required></textarea>
+        </div>
+
+        <div class="honeypot" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input id="website" name="website" type="text"
+                 tabindex="-1" autocomplete="off">
+        </div>
+
+        <button class="submit-button" id="blessingSubmit" type="submit">
+          Send
+        </button>
+
+        <p class="form-status" id="blessingStatus"
+           role="status" aria-live="polite"></p>
+
+        <p class="form-note">
+          Thank you for being part of our special journey.
+        </p>
+
+      </form>
+
+      <iframe name="blessingResponse"
+              id="blessingResponse"
+              title="Blessing submission response"
+              style="display:none"></iframe>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- CLOSING -->
+
+<footer>
+  <img src="./AD-monogram.png"
+       alt="Danish and Alfiya monogram">
+
+  <h2>Danish &amp; Alfiya</h2>
+
+  <div class="footer-script">Forever, InshaAllah</div>
+
+  <div class="rule"></div>
+
+  <p>16 DECEMBER 2026 · 6 Rajab 1448 AH</p>
+  <p>Hosted with love and duas by our families</p>
+
+  <p class="copyright">
+    MADE WITH LOVE FOR OUR FAVOURITE PEOPLE
+  </p>
+</footer>
+
+<!-- MUSIC CONTROL -->
+
+<button class="music-control" id="musicControl"
+        type="button" aria-label="Toggle background music"
+        aria-pressed="true">
+  ♫ MUSIC ON
+</button>
+
+<!-- IMAGE LIGHTBOX -->
+
+<div class="lightbox" id="lightbox" tabindex="-1"
+     role="dialog" aria-modal="true"
+     aria-label="Image viewer">
+
+  <button class="lightbox-close" id="lightboxClose"
+          type="button" aria-label="Close image viewer">×</button>
+
+  <button class="lightbox-arrow lightbox-prev" id="lightboxPrev"
+          type="button" aria-label="Previous image">‹</button>
+
+  <div class="lightbox-content">
+    <img id="lightboxImage" src="" alt="">
+  </div>
+
+  <button class="lightbox-arrow lightbox-next" id="lightboxNext"
+          type="button" aria-label="Next image">›</button>
+
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+/* =========================================================
+   OPENING EXPERIENCE AND MUSIC
+========================================================= */
+
+const opening = document.getElementById("opening");
+const openButton = document.getElementById("openInvite");
+const music = document.getElementById("weddingMusic");
+const musicControl = document.getElementById("musicControl");
+
+const reduceMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+let invitationOpened = false;
+
+openButton.addEventListener("click", async () => {
+  if (invitationOpened) return;
+
+  invitationOpened = true;
+  openButton.disabled = true;
+
+  opening.classList.add("opened");
+
+  // Audio playback is initiated only after visitor interaction.
+  try {
+    music.volume = 0.45;
+    await music.play();
+
+    musicControl.textContent = "♫ MUSIC ON";
+    musicControl.setAttribute("aria-pressed", "true");
+  } catch (error) {
+    musicControl.textContent = "♫ PLAY MUSIC";
+    musicControl.setAttribute("aria-pressed", "false");
+  }
+
+  musicControl.classList.add("visible");
+
+  const transitionDuration = reduceMotion ? 100 : 1550;
+
+  setTimeout(() => {
+    opening.classList.add("hidden");
+    document.body.classList.remove("locked");
+  }, transitionDuration);
+
+  setTimeout(() => {
+    opening.style.display = "none";
+  }, reduceMotion ? 300 : 2500);
+});
+
+
+/* MUSIC TOGGLE */
+
+musicControl.addEventListener("click", async () => {
+  if (music.paused) {
+    try {
+      await music.play();
+      musicControl.textContent = "♫ MUSIC ON";
+      musicControl.setAttribute("aria-pressed", "true");
+    } catch (error) {
+      musicControl.textContent = "♫ PLAY MUSIC";
+      musicControl.setAttribute("aria-pressed", "false");
+    }
+  } else {
+    music.pause();
+    musicControl.textContent = "♫ MUSIC OFF";
+    musicControl.setAttribute("aria-pressed", "false");
+  }
+});
+
+
+/* =========================================================
+   RESPONSIVE MOBILE NAVIGATION
+========================================================= */
+
+const menuToggle = document.getElementById("menuToggle");
+const navArea = document.getElementById("navArea");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navArea.classList.toggle("open");
+
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation menu" : "Open navigation menu"
+  );
+
+  menuToggle.textContent = isOpen ? "×" : "☰";
+});
+
+document.querySelectorAll(".nav-area a").forEach(link => {
+  link.addEventListener("click", () => {
+    navArea.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
+    menuToggle.textContent = "☰";
+  });
+});
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const navigationLinks = document.querySelectorAll(".nav-area a");
+const observedSections = document.querySelectorAll(
+  "main section[id]"
+);
+
+if ("IntersectionObserver" in window) {
+  const activeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      navigationLinks.forEach(link => {
+        const isActive =
+          link.getAttribute("href") === "#" + entry.target.id;
+
+        link.classList.toggle("active", isActive);
+      });
+    });
+  }, {
+    rootMargin: "-25% 0px -60% 0px",
+    threshold: 0
+  });
+
+  observedSections.forEach(section => {
+    activeObserver.observe(section);
+  });
+}
+
+
+/* =========================================================
+   COUNTDOWN TO NIKAH — INDIA STANDARD TIME
+========================================================= */
+
+const weddingDate = new Date(
+  "2026-12-16T18:30:00+05:30"
+).getTime();
+
+function updateCountdown() {
+  const distance = weddingDate - Date.now();
+
+  const ids = ["days", "hours", "minutes", "seconds"];
+
+  if (distance <= 0) {
+    ids.forEach(id => {
+      document.getElementById(id).textContent = "00";
+    });
+    return;
+  }
+
+  const values = [
+    Math.floor(distance / 86400000),
+    Math.floor((distance / 3600000) % 24),
+    Math.floor((distance / 60000) % 60),
+    Math.floor((distance / 1000) % 60)
+  ];
+
+  ids.forEach((id, index) => {
+    document.getElementById(id).textContent =
+      String(values[index]).padStart(2, "0");
+  });
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.add("visible");
+      revealObserver.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.12
+  });
+
+  document.querySelectorAll(".reveal").forEach(element => {
+    revealObserver.observe(element);
+  });
+
+} else {
+  document.querySelectorAll(".reveal").forEach(element => {
+    element.classList.add("visible");
+  });
+}
+
+
+/* =========================================================
+   LIGHTBOX — EVENTS AND GALLERY
+========================================================= */
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCaption = document.getElementById("lightboxCaption");
+
+const lightboxClose = document.getElementById("lightboxClose");
+const lightboxPrev = document.getElementById("lightboxPrev");
+const lightboxNext = document.getElementById("lightboxNext");
+
+const lightboxButtons = Array.from(
+  document.querySelectorAll("[data-lightbox]")
+);
+
+let currentLightboxIndex = 0;
+let lastFocusedElement = null;
+
+function openLightbox(index) {
+  if (!lightboxButtons.length) return;
+
+  currentLightboxIndex =
+    (index + lightboxButtons.length) % lightboxButtons.length;
+
+  const button = lightboxButtons[currentLightboxIndex];
+
+  lightboxImage.src = button.dataset.lightbox;
+  lightboxImage.alt =
+    button.querySelector("img")?.alt || "Wedding photograph";
+
+  lightboxCaption.textContent =
+    button.dataset.caption || "";
+
+  lightbox.classList.add("active");
+  document.body.style.overflow = "hidden";
+
+  lightboxClose.focus();
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  document.body.style.overflow = "";
+
+  lightboxImage.src = "";
+
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+  }
+}
+
+lightboxButtons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    lastFocusedElement = button;
+    openLightbox(index);
+  });
+});
+
+lightboxClose.addEventListener("click", closeLightbox);
+
+lightboxPrev.addEventListener("click", () => {
+  openLightbox(currentLightboxIndex - 1);
+});
+
+lightboxNext.addEventListener("click", () => {
+  openLightbox(currentLightboxIndex + 1);
+});
+
+lightbox.addEventListener("click", event => {
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (!lightbox.classList.contains("active")) return;
+
+  if (event.key === "Escape") {
+    closeLightbox();
+  }
+
+  if (event.key === "ArrowLeft") {
+    openLightbox(currentLightboxIndex - 1);
+  }
+
+  if (event.key === "ArrowRight") {
+    openLightbox(currentLightboxIndex + 1);
+  }
+});
+
+
+/* =========================================================
+   BLESSINGS FORM — EXISTING GOOGLE SHEETS INTEGRATION
+========================================================= */
+
+// Preserve the original Apps Script endpoint.
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbz5VARKb8wvnHrgr6s-xeXsVaWk6pSsVd2Okqg766o3h3ZgX-Y35yMWOztOR-MpdycH/exec";
+
+const form = document.getElementById("blessingForm");
+const statusMessage = document.getElementById("blessingStatus");
+const submitButton = document.getElementById("blessingSubmit");
+const responseFrame = document.getElementById("blessingResponse");
+
+let submissionPending = false;
+let responseTimeout = null;
+let submissionStarted = false;
+
+form.addEventListener("submit", event => {
+  event.preventDefault();
+
+  if (!form.reportValidity()) return;
+
+  // Honeypot protection.
+  if (document.getElementById("website").value.trim()) return;
+
+  // Prevent duplicate submissions.
+  if (submissionPending) return;
+
+  if (!GOOGLE_SCRIPT_URL.endsWith("/exec")) {
+    statusMessage.textContent =
+      "The blessings form is not configured.";
+    return;
+  }
+
+  form.action = GOOGLE_SCRIPT_URL;
+
+  submissionPending = true;
+  submissionStarted = false;
+
+  submitButton.disabled = true;
+  submitButton.textContent = "Sending...";
+
+  statusMessage.textContent =
+    "Sending your response. Please wait...";
+
+  // The iframe is used to submit the existing Apps Script
+  // form without navigating away from the invitation.
+  responseFrame.onload = () => {
+    if (!submissionPending || !submissionStarted) return;
+
+    clearTimeout(responseTimeout);
+
+    submissionPending = false;
+
+    submitButton.disabled = false;
+    submitButton.textContent = "Send";
+
+    statusMessage.textContent =
+      "Your response has been submitted. Thank you for your wishes!";
+
+    form.reset();
+  };
+
+  // Set the flag before the form is submitted so the initial
+  // iframe load cannot be mistaken for a submission response.
+  submissionStarted = true;
+
+  // Cross-origin iframe form submission.
+  HTMLFormElement.prototype.submit.call(form);
+
+  // A timeout is an unconfirmed result, NOT a success.
+  responseTimeout = setTimeout(() => {
+    if (!submissionPending) return;
+
+    submissionPending = false;
+
+    submitButton.disabled = false;
+    submitButton.textContent = "Send";
+
+    statusMessage.textContent =
+      "We could not confirm the response. Please check with the hosts before submitting again.";
+  }, 15000);
+});
+</script>
+
+</body>
+</html>
